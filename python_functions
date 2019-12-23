@@ -1,12 +1,12 @@
 
 #Libraries to install
-
-pip install editdistance
-
-""" 
-    import statements for importing pm4py libraries
+#pm4py
+#editdistance
 
 """ 
+    import statements for importing relevant libraries
+""" 
+
 #for importing logs
 from pm4py.objects.log.importer.xes import factory as xes_import_factory
 
@@ -91,6 +91,19 @@ def compute_edit_distance_variability(logpath):
     
     
 def compute_my_variability(logpath):
+"""
+    Python function for computing TRACE ENTROPY probabilities exactly the VARIANT frequencies observed in the log.
+    The trace entropy is defined as 
+    \[ entropy(L) = -\sum\limits_{T_i\in L} P_l(T_i) log P_l(T_i)\]
+ where \( P(T_i) = \frac{f_i  }{\sum f}\)
+
+    Args:
+        logpath (path): The path of events log to parse
+        
+
+    Returns:
+       Average edit distance between all variants in log
+    """
     log = xes_import_factory.apply(logpath)
     variants_count = case_statistics.get_variant_statistics(log)
     variant_trace_df = pd.DataFrame(variants_count)
