@@ -10,6 +10,6 @@ Three different metrics are considered in each function:
 3. Trace Entropy using  using exact trace frequency as the probabilities.
 
 
-A pdf file "processMiningProject.pdf" is also included in this repo, which describes the defined metrics in the python functions,
+A pdf file is also included in this repo, which describes the defined metrics in the python functions,
 the overall structure of the code and 
 test results using Test Logs from Moodle Page, and finally testing on the BPI Challenge 2011 log
